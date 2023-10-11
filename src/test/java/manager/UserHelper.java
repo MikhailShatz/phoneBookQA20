@@ -1,6 +1,7 @@
 package manager;
 
 import dto.UserDTO;
+import dto.UserDTOLombok;
 import dto.UserDTOWith;
 import org.openqa.selenium.*;
 
@@ -30,6 +31,21 @@ public class UserHelper extends  BaseHelper {
         typeTextBase(inputEmailLoginForm, userDTO.getEmail());
         typeTextBase(inputPasswordLoginForm, userDTO.getPassword());
         clickBase(btnLoginForm);
+        clickBase(btnSignOut);
+    }
+
+    public void loginUserDToLombok(UserDTOLombok user) {
+        clickBase(btnLoginNavigatorMenu);
+        typeTextBase(inputEmailLoginForm, user.getEmail());
+        typeTextBase(inputPasswordLoginForm, user.getPassword());
+        clickBase(btnLoginForm);
+        clickBase(btnSignOut);
+    }
+    public void fillRegistrationForm(UserDTOLombok user) {
+        clickBase(btnLoginNavigatorMenu);
+        typeTextBase(inputEmailLoginForm, user.getEmail());
+        typeTextBase(inputPasswordLoginForm, user.getPassword());
+        clickBase(btnRegistrationForm);
         clickBase(btnSignOut);
     }
 
