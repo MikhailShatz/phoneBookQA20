@@ -1,6 +1,9 @@
 package manager;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -46,5 +49,26 @@ public class BaseHelper {
             + actualResult);
             return false;
         }
+    }
+    public boolean isElementExist(By locator){
+        return !findElementsBase(locator).isEmpty();
+    }
+    public void alert(){
+        new WebDriverWait(driver, 10).until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
+    }
+
+    public void clickByXY(By locator, int down, int right){ //5 15
+        Rectangle rect = findElementBase(locator).getRect();
+        int x = rect.getX() + (rect.getWidth()/right);
+        int y = (int) (rect.getY() + (rect.getHeight()/ down)); //0.3
+
+        Actions actions = new Actions(driver);
+        actions.moveByOffset(x,y).click().perform();
+    }
+    public void clickByJS(String locator){
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript(locator);
+        System.out.println(locator);
     }
 }
