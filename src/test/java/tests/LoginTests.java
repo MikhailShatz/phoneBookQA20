@@ -5,12 +5,13 @@ import dto.UserDTOLombok;
 import dto.UserDTOWith;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTest{
 
-    @BeforeTest
+    @BeforeMethod
     public void preconditionsLogin(){
         logoutIfLogin();
     }
