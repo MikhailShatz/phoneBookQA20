@@ -44,6 +44,7 @@ public class BaseHelper {
        return isTextEqualGet2Strings(expectedResult, actualResult);
     }
 
+
     public String getTextAlert(){
         WebDriverWait wait = new WebDriverWait(driver, 10);
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
