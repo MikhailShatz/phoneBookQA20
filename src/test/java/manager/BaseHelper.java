@@ -1,6 +1,8 @@
 package manager;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -39,11 +41,21 @@ public class BaseHelper {
         String actualResult = getTextBase(locator);
         expectedResult = expectedResult.toUpperCase();
 
-        if(expectedResult.equals(actualResult)){
+       return isTextEqualGet2Strings(expectedResult, actualResult);
+    }
+
+    public String getTextAlert(){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        return alert.getText().toUpperCase().trim();
+    }
+
+    public boolean isTextEqualGet2Strings(String expectedRes, String actualRes){
+        if(expectedRes.equals(actualRes)){
             return  true;
         }else{
-            System.out.println("expected result: " + expectedResult + "actual result: "
-            + actualResult);
+            System.out.println("expected result: " + expectedRes + "actual result: "
+                    + actualRes);
             return false;
         }
     }

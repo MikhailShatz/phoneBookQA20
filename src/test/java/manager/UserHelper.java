@@ -33,6 +33,8 @@ public class UserHelper extends  BaseHelper {
         clickBase(btnSignOut);
     }
 
+
+
 //    public boolean validatePopUpMessageSuccessAfterLogin(){
 //        return isTextEqual(, "CONTACTS");
 //    }
