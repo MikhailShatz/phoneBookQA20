@@ -1,6 +1,7 @@
 package manager;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -41,23 +42,33 @@ public class BaseHelper {
         String actualResult = getTextBase(locator);
         expectedResult = expectedResult.toUpperCase();
 
-       return isTextEqualGet2Strings(expectedResult, actualResult);
-    }
-
-
-    public String getTextAlert(){
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-        return alert.getText().toUpperCase().trim();
-    }
-
-    public boolean isTextEqualGet2Strings(String expectedRes, String actualRes){
-        if(expectedRes.equals(actualRes)){
+        if(expectedResult.equals(actualResult)){
             return  true;
         }else{
-            System.out.println("expected result: " + expectedRes + "actual result: "
-                    + actualRes);
+            System.out.println("expected result: " + expectedResult + "actual result: "
+                    + actualResult);
             return false;
         }
+    }
+    public boolean isElementExist(By locator){
+        return !findElementsBase(locator).isEmpty();
+    }
+    public void alert(){
+        new WebDriverWait(driver, 10).until(ExpectedConditions.alertIsPresent());
+        driver.switchTo().alert().accept();
+    }
+
+    public void clickByXY(By locator, int down, int right){ //5 15
+        Rectangle rect = findElementBase(locator).getRect();
+        int x = rect.getX() + (rect.getWidth()/right);
+        int y = (int) (rect.getY() + (rect.getHeight()/ down)); //0.3
+
+        Actions actions = new Actions(driver);
+        actions.moveByOffset(x,y).click().perform();
+    }
+    public void clickByJS(String locator){
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript(locator);
+        System.out.println(locator);
     }
 }
