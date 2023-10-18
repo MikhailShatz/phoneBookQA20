@@ -12,7 +12,7 @@ public class RegistrationTest extends BaseTest{
     }
 
 
-    @Test
+    @Test(priority = 1)
     public void positiveRegistration(){
         String email = randomUtils.generateEmail(7);
 
@@ -23,7 +23,7 @@ public class RegistrationTest extends BaseTest{
         app.getUserHelper().fillRegistrationForm(user);
         Assert.assertTrue(app.getUserHelper().validateContactTextDisplaysMainMenu());
     }
-    @Test
+    @Test(priority = 2)
     public void negativeRegistrationWrongEmail(){
         UserDTOLombok user = UserDTOLombok.builder()
                 .email("abc@")
@@ -35,7 +35,7 @@ public class RegistrationTest extends BaseTest{
 
     }
 
-    @Test
+    @Test(priority = 3)
     public void negativeRegistrationWrongPassword(){
         String email = randomUtils.generateEmail(7);
         UserDTOLombok user = UserDTOLombok.builder()
@@ -47,7 +47,7 @@ public class RegistrationTest extends BaseTest{
 
     }
 
-    @Test
+    @Test(priority = 4)
     public void negativeRegistrationBlankEmail(){
         UserDTOLombok user = UserDTOLombok.builder()
                 .email("")
@@ -57,7 +57,7 @@ public class RegistrationTest extends BaseTest{
         Assert.assertTrue(app.getUserHelper().registrationFailedErrorMessage());
 
     }
-    @Test
+    @Test(priority = 5)
     public void negativeRegistrationUserAlreadyExists(){
         UserDTOLombok user = UserDTOLombok.builder()
                 .email("awqfwf@gmail.com")
