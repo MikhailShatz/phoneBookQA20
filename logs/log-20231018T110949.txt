@@ -1,0 +1,24 @@
+2023-10-18 11:09:52,173 INFO m.ApplicationManager [ApplicationManager.java:23] Navigated to the url https://telranedu.web.app/home
+2023-10-18 11:09:52,175 INFO m.TestNGListener [TestNGListener.java:48] start test - onstart - : Gradle test
+2023-10-18 11:10:02,210 INFO t.BaseTest [BaseTest.java:36] start method: negativeRegistrationBlankEmail
+2023-10-18 11:10:02,211 INFO m.TestNGListener [TestNGListener.java:13] start test: negativeRegistrationBlankEmail
+2023-10-18 11:10:12,689 INFO m.TestNGListener [TestNGListener.java:19] test success: negativeRegistrationBlankEmail
+2023-10-18 11:10:12,690 INFO t.BaseTest [BaseTest.java:40] stop method: negativeRegistrationBlankEmail
+2023-10-18 11:10:12,692 INFO t.BaseTest [BaseTest.java:36] start method: negativeRegistrationUserAlreadyExists
+2023-10-18 11:10:12,692 INFO m.TestNGListener [TestNGListener.java:13] start test: negativeRegistrationUserAlreadyExists
+2023-10-18 11:10:23,156 INFO m.TestNGListener [TestNGListener.java:19] test success: negativeRegistrationUserAlreadyExists
+2023-10-18 11:10:23,157 INFO t.BaseTest [BaseTest.java:40] stop method: negativeRegistrationUserAlreadyExists
+2023-10-18 11:10:23,158 INFO t.BaseTest [BaseTest.java:36] start method: negativeRegistrationWrongEmail
+2023-10-18 11:10:23,158 INFO m.TestNGListener [TestNGListener.java:13] start test: negativeRegistrationWrongEmail
+2023-10-18 11:10:33,555 INFO m.TestNGListener [TestNGListener.java:19] test success: negativeRegistrationWrongEmail
+2023-10-18 11:10:33,556 INFO t.BaseTest [BaseTest.java:40] stop method: negativeRegistrationWrongEmail
+2023-10-18 11:10:33,556 INFO t.BaseTest [BaseTest.java:36] start method: negativeRegistrationWrongPassword
+2023-10-18 11:10:33,558 INFO m.TestNGListener [TestNGListener.java:13] start test: negativeRegistrationWrongPassword
+2023-10-18 11:10:43,990 INFO m.TestNGListener [TestNGListener.java:19] test success: negativeRegistrationWrongPassword
+2023-10-18 11:10:43,991 INFO t.BaseTest [BaseTest.java:40] stop method: negativeRegistrationWrongPassword
+2023-10-18 11:10:43,992 INFO t.BaseTest [BaseTest.java:36] start method: positiveRegistration
+2023-10-18 11:10:43,992 INFO m.TestNGListener [TestNGListener.java:13] start test: positiveRegistration
+2023-10-18 11:10:45,015 INFO m.TestNGListener [TestNGListener.java:19] test success: positiveRegistration
+2023-10-18 11:10:45,016 INFO t.BaseTest [BaseTest.java:40] stop method: positiveRegistration
+2023-10-18 11:10:45,017 INFO m.TestNGListener [TestNGListener.java:54] all code executed: passed tests: [ResultMap map=[[TestResult name=negativeRegistrationWrongEmail status=SUCCESS method=RegistrationTest.negativeRegistrationWrongEmail()[pri:2, instance:tests.RegistrationTest@71238fc2] output={null}], [TestResult name=negativeRegistrationWrongPassword status=SUCCESS method=RegistrationTest.negativeRegistrationWrongPassword()[pri:3, instance:tests.RegistrationTest@71238fc2] output={null}], [TestResult name=positiveRegistration status=SUCCESS method=RegistrationTest.positiveRegistration()[pri:1, instance:tests.RegistrationTest@71238fc2] output={null}], [TestResult name=negativeRegistrationUserAlreadyExists status=SUCCESS method=RegistrationTest.negativeRegistrationUserAlreadyExists()[pri:5, instance:tests.RegistrationTest@71238fc2] output={null}], [TestResult name=negativeRegistrationBlankEmail status=SUCCESS method=RegistrationTest.negativeRegistrationBlankEmail()[pri:4, instance:tests.RegistrationTest@71238fc2] output={null}]]]
+2023-10-18 11:10:45,017 INFO m.TestNGListener [TestNGListener.java:55] all code executed: failed tests: [ResultMap map=[]]
